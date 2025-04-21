@@ -3,7 +3,7 @@ package ru.netology.javaqa.javaqamvn.servises;
 public class Radio {
     public int numberRadioStation; //номер текущей радиостанции
     int soundVolume; //громкость звука
-    int certainNumberRadioStation; //определенная волна, накоторую хотим переключиться
+    //int certainNumberRadioStation; //определенная волна, накоторую хотим переключиться
 
     // переключаем на следующую радиоволну
     public void nextRadioStation() {
@@ -24,15 +24,15 @@ public class Radio {
     }
 
     // переключаем на выбранную определенную радиоволну (имеется проверка достуаного диапозона волн)
-    public void certainRadioStation() {
+    public void setRadioStation(int newRadioStation) {
 
-        if (certainNumberRadioStation < 0) {
+        if (newRadioStation < 0) {
             return;
         }
-        if (certainNumberRadioStation > 9) {
+        if (newRadioStation > 9) {
             return;
         }
-        numberRadioStation = certainNumberRadioStation;
+        numberRadioStation = newRadioStation;
     }
 
     // увеличиваем громкость

@@ -77,9 +77,7 @@ public class RadioTest {
     public void shouldChangeRadioStation() {
         Radio rad = new Radio();
 
-        rad.certainNumberRadioStation = 5;
-
-        rad.certainRadioStation();
+        rad.setRadioStation(5);
 
         int expected = 5;
         int actual = rad.numberRadioStation;
@@ -91,9 +89,7 @@ public class RadioTest {
     public void shouldChangeRadioStationUpBorder() {
         Radio rad = new Radio();
 
-        rad.certainNumberRadioStation = 10;
-
-        rad.certainRadioStation();
+        rad.setRadioStation(10);
 
         int expected = 0;
         int actual = rad.numberRadioStation;
@@ -105,9 +101,7 @@ public class RadioTest {
     public void shouldChangeRadioStationDownBorder() {
         Radio rad = new Radio();
 
-        rad.certainNumberRadioStation = -1;
-
-        rad.certainRadioStation();
+        rad.setRadioStation(-1);
 
         int expected = 0;
         int actual = rad.numberRadioStation;
