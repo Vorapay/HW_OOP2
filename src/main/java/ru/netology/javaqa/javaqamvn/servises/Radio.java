@@ -1,9 +1,34 @@
 package ru.netology.javaqa.javaqamvn.servises;
 
 public class Radio {
-    public int numberRadioStation; //номер текущей радиостанции
-    int soundVolume; //громкость звука
-    //int certainNumberRadioStation; //определенная волна, накоторую хотим переключиться
+    private int numberRadioStation; //номер текущей радиостанции
+    private int soundVolume; //громкость звука
+
+    // гетер текущей волны
+    public int getNumberRadioStation() {
+        return numberRadioStation;
+    }
+
+    // сетер текущей волны
+    public void setNumberRadioStation(int newNumberRadioStation) {
+        if (newNumberRadioStation < 0) {
+            return;
+        }
+        if (newNumberRadioStation > 9) {
+            return;
+        }
+        numberRadioStation = newNumberRadioStation;
+    }
+
+    // гетер уровня громкости
+    public int getSoundVolume() {
+        return soundVolume;
+    }
+
+    // сетер уровня громкости
+    public void setSoundVolume(int newSoundVolume) {
+        soundVolume = newSoundVolume;
+    }
 
     // переключаем на следующую радиоволну
     public void nextRadioStation() {
@@ -23,30 +48,19 @@ public class Radio {
         }
     }
 
-    // переключаем на выбранную определенную радиоволну (имеется проверка достуаного диапозона волн)
-    public void setRadioStation(int newRadioStation) {
-
-        if (newRadioStation < 0) {
-            return;
-        }
-        if (newRadioStation > 9) {
-            return;
-        }
-        numberRadioStation = newRadioStation;
-    }
-
     // увеличиваем громкость
     public void increaseVolume() {
-        if (soundVolume >= 100) {
+        if (soundVolume > 100) {
             soundVolume = 100;
         } else {
             soundVolume = soundVolume + 1;
         }
+        ;
     }
 
     // уменьшаем громкость
     public void decreaseVolume() {
-        if (soundVolume <= 0) {
+        if (soundVolume < 0) {
             soundVolume = 0;
         } else {
             soundVolume = soundVolume - 1;
