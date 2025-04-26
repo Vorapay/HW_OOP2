@@ -1,8 +1,18 @@
 package ru.netology.javaqa.javaqamvn.servises;
 
 public class Radio {
-    private int numberRadioStation; //номер текущей радиостанции
+    private int quantity = 10; // количество радиостанций
     private int soundVolume; //громкость звука
+    private int numberRadioStation; //номер текущей радиостанции
+
+
+
+    public Radio(int newQuantity ) {
+        this.quantity = newQuantity;
+    }
+
+    public Radio() {
+    }
 
     // гетер текущей волны
     public int getNumberRadioStation() {
@@ -14,7 +24,7 @@ public class Radio {
         if (newNumberRadioStation < 0) {
             return;
         }
-        if (newNumberRadioStation > 9) {
+        if (newNumberRadioStation > quantity - 1) {
             return;
         }
         numberRadioStation = newNumberRadioStation;
@@ -32,9 +42,10 @@ public class Radio {
 
     // переключаем на следующую радиоволну
     public void nextRadioStation() {
-        if (numberRadioStation == 9) {
+        if (numberRadioStation >= quantity - 1) {
             numberRadioStation = 0;
-        } else {
+        }
+        else {
             numberRadioStation = numberRadioStation + 1;
         }
     }
@@ -42,8 +53,9 @@ public class Radio {
     // переключаем на предидущую радиоволну
     public void prevRadioStation() {
         if (numberRadioStation == 0) {
-            numberRadioStation = 9;
-        } else {
+            numberRadioStation = quantity - 1;
+        }
+        else {
             numberRadioStation = numberRadioStation - 1;
         }
     }
