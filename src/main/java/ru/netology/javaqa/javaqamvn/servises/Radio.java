@@ -6,8 +6,7 @@ public class Radio {
     private int numberRadioStation; //номер текущей радиостанции
 
 
-
-    public Radio(int newQuantity ) {
+    public Radio(int newQuantity) {
         this.quantity = newQuantity;
     }
 
@@ -44,8 +43,7 @@ public class Radio {
     public void nextRadioStation() {
         if (numberRadioStation >= quantity - 1) {
             numberRadioStation = 0;
-        }
-        else {
+        } else {
             numberRadioStation = numberRadioStation + 1;
         }
     }
@@ -54,8 +52,7 @@ public class Radio {
     public void prevRadioStation() {
         if (numberRadioStation == 0) {
             numberRadioStation = quantity - 1;
-        }
-        else {
+        } else {
             numberRadioStation = numberRadioStation - 1;
         }
     }

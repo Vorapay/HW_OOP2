@@ -17,7 +17,8 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test // если пользователь не указал количество радиостанций, но захотел выставить радиоволну, выше допустимой по умолчанию
+    @Test
+    // если пользователь не указал количество радиостанций, но захотел выставить радиоволну, выше допустимой по умолчанию
     public void shouldNoRange() {
         Radio rad = new Radio();
 
