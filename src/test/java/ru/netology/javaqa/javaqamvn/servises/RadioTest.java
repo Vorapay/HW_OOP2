@@ -8,5 +8,6 @@ public class RadioTest {
     @Test // не выставляет радиоволну, больше чем количество допустимых
     public void shouldCreate() {
         Radio radio = new Radio();
+
         Radio.
     }
